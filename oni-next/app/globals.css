@@ -1,0 +1,17 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{ --fs-hero: clamp(1.75rem, 3.5vw, 2.75rem); --fs-h2: clamp(1.375rem, 2.4vw, 2rem); }
+html:focus-within { scroll-behavior: smooth; }
+::selection { background: #ffffff26; }
+
+.sep { height: 1px; background: linear-gradient(to right, transparent 0, theme(colors.sep) 15%, theme(colors.sep) 85%, transparent 100%); position: relative; margin-block: 40px; }
+.sep::before, .sep::after { content: ""; position: absolute; top: -3px; width: 6px; height: 6px; border-radius: 9999px; background: theme(colors.oniRed); }
+.sep::before { left: 8%; } .sep::after { right: 8%; }
+
+@layer components {
+  .btn-primary { @apply inline-flex items-center justify-center gap-2 bg-oniRed text-white px-4 py-3 rounded-md font-bold shadow-oni transition hover:opacity-95 hover:-translate-y-[1px]; }
+  .btn-secondary { @apply inline-flex items-center justify-center gap-2 bg-transparent border border-gray2 text-white px-4 py-3 rounded-md font-bold transition hover:-translate-y-[1px]; }
+}
